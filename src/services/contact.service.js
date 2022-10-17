@@ -21,6 +21,10 @@ class ContactService {
         return (await this.api.post(this.baseUrl, contact)).data;
     }
 
+    async update(id, contact) {
+        return (await this.api.put(`${this.baseUrl}/${id}`, contact)).data;
+    }
+    
     async deleteMany() {
         return (await this.api.delete(this.baseUrl)).data;
     }
@@ -28,10 +32,7 @@ class ContactService {
     async get(id) {
         return (await this.api.get(`${this.baseUrl}/${id}`)).data;
     }
-
-    async update(id, contact) {
-        return (await this.api.put(`${this.baseUrl}/${id}`, contact)).data;
-    }
+    
 
     async delete(id) {
         return (await this.api.delete(`${this.baseUrl}/${id}`)).data;
